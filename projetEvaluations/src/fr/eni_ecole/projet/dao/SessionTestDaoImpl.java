@@ -1,4 +1,4 @@
-package fr.eni_ecole.projet.dao.impl;
+package fr.eni_ecole.projet.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -6,24 +6,25 @@ import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import fr.eni_ecole.entities.Section;
+import fr.eni_ecole.entities.SessionTest;
 
 /**
  * 
  * @author d1409sergentm
  *
  */
-public class SectionDaoImpl {
+public class SessionTestDaoImpl {
 
-	private static final Log log = LogFactory.getLog(SectionDaoImpl.class);
+	private static final Log log = LogFactory.getLog(SessionTestDaoImpl.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public Section findById(int id) {
-		log.debug("getting Section instance with id: " + id);
+	public SessionTest findById(int id) {
+		log.debug("getting SessionTest instance with id: " + id);
 		try {
-			final Section instance = this.entityManager.find(Section.class, id);
+			final SessionTest instance = this.entityManager.find(
+					SessionTest.class, id);
 			log.debug("get successful");
 			return instance;
 		} catch (final RuntimeException re) {
@@ -32,10 +33,11 @@ public class SectionDaoImpl {
 		}
 	}
 
-	public Section merge(Section detachedInstance) {
-		log.debug("merging Section instance");
+	public SessionTest merge(SessionTest detachedInstance) {
+		log.debug("merging SessionTest instance");
 		try {
-			final Section result = this.entityManager.merge(detachedInstance);
+			final SessionTest result = this.entityManager
+					.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (final RuntimeException re) {
@@ -44,8 +46,8 @@ public class SectionDaoImpl {
 		}
 	}
 
-	public void persist(Section transientInstance) {
-		log.debug("persisting Section instance");
+	public void persist(SessionTest transientInstance) {
+		log.debug("persisting SessionTest instance");
 		try {
 			this.entityManager.persist(transientInstance);
 			log.debug("persist successful");
@@ -55,8 +57,8 @@ public class SectionDaoImpl {
 		}
 	}
 
-	public void remove(Section persistentInstance) {
-		log.debug("removing Section instance");
+	public void remove(SessionTest persistentInstance) {
+		log.debug("removing SessionTest instance");
 		try {
 			this.entityManager.remove(persistentInstance);
 			log.debug("remove successful");

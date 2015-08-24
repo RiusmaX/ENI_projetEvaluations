@@ -1,4 +1,4 @@
-package fr.eni_ecole.projet.dao.impl;
+package fr.eni_ecole.projet.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -6,24 +6,25 @@ import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import fr.eni_ecole.entities.Test;
+import fr.eni_ecole.entities.Question;
 
 /**
  * 
  * @author d1409sergentm
  *
  */
-public class TestDaoImpl {
+public class QuestionDaoImpl {
 
-	private static final Log log = LogFactory.getLog(TestDaoImpl.class);
+	private static final Log log = LogFactory.getLog(QuestionDaoImpl.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public Test findById(int id) {
-		log.debug("getting Test instance with id: " + id);
+	public Question findById(int id) {
+		log.debug("getting Question instance with id: " + id);
 		try {
-			final Test instance = this.entityManager.find(Test.class, id);
+			final Question instance = this.entityManager.find(Question.class,
+					id);
 			log.debug("get successful");
 			return instance;
 		} catch (final RuntimeException re) {
@@ -32,10 +33,10 @@ public class TestDaoImpl {
 		}
 	}
 
-	public Test merge(Test detachedInstance) {
-		log.debug("merging Test instance");
+	public Question merge(Question detachedInstance) {
+		log.debug("merging Question instance");
 		try {
-			final Test result = this.entityManager.merge(detachedInstance);
+			final Question result = this.entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (final RuntimeException re) {
@@ -44,8 +45,8 @@ public class TestDaoImpl {
 		}
 	}
 
-	public void persist(Test transientInstance) {
-		log.debug("persisting Test instance");
+	public void persist(Question transientInstance) {
+		log.debug("persisting Question instance");
 		try {
 			this.entityManager.persist(transientInstance);
 			log.debug("persist successful");
@@ -55,8 +56,8 @@ public class TestDaoImpl {
 		}
 	}
 
-	public void remove(Test persistentInstance) {
-		log.debug("removing Test instance");
+	public void remove(Question persistentInstance) {
+		log.debug("removing Question instance");
 		try {
 			this.entityManager.remove(persistentInstance);
 			log.debug("remove successful");

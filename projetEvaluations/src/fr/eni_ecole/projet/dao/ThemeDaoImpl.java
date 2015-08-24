@@ -1,4 +1,4 @@
-package fr.eni_ecole.projet.dao.impl;
+package fr.eni_ecole.projet.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -6,24 +6,24 @@ import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import fr.eni_ecole.entities.Reponse;
+import fr.eni_ecole.entities.Theme;
 
 /**
  * 
  * @author d1409sergentm
  *
  */
-public class ReponseDaoImpl {
+public class ThemeDaoImpl {
 
-	private static final Log log = LogFactory.getLog(ReponseDaoImpl.class);
+	private static final Log log = LogFactory.getLog(ThemeDaoImpl.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public Reponse findById(int id) {
-		log.debug("getting Reponse instance with id: " + id);
+	public Theme findById(int id) {
+		log.debug("getting Theme instance with id: " + id);
 		try {
-			final Reponse instance = this.entityManager.find(Reponse.class, id);
+			final Theme instance = this.entityManager.find(Theme.class, id);
 			log.debug("get successful");
 			return instance;
 		} catch (final RuntimeException re) {
@@ -32,10 +32,10 @@ public class ReponseDaoImpl {
 		}
 	}
 
-	public Reponse merge(Reponse detachedInstance) {
-		log.debug("merging Reponse instance");
+	public Theme merge(Theme detachedInstance) {
+		log.debug("merging Theme instance");
 		try {
-			final Reponse result = this.entityManager.merge(detachedInstance);
+			final Theme result = this.entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (final RuntimeException re) {
@@ -44,8 +44,8 @@ public class ReponseDaoImpl {
 		}
 	}
 
-	public void persist(Reponse transientInstance) {
-		log.debug("persisting Reponse instance");
+	public void persist(Theme transientInstance) {
+		log.debug("persisting Theme instance");
 		try {
 			this.entityManager.persist(transientInstance);
 			log.debug("persist successful");
@@ -55,8 +55,8 @@ public class ReponseDaoImpl {
 		}
 	}
 
-	public void remove(Reponse persistentInstance) {
-		log.debug("removing Reponse instance");
+	public void remove(Theme persistentInstance) {
+		log.debug("removing Theme instance");
 		try {
 			this.entityManager.remove(persistentInstance);
 			log.debug("remove successful");

@@ -1,4 +1,4 @@
-package fr.eni_ecole.projet.dao.impl;
+package fr.eni_ecole.projet.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -6,25 +6,25 @@ import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import fr.eni_ecole.entities.SessionTest;
+import fr.eni_ecole.entities.Candidat;
 
 /**
  * 
  * @author d1409sergentm
  *
  */
-public class SessionTestDaoImpl {
+public class CandidatDaoImpl {
 
-	private static final Log log = LogFactory.getLog(SessionTestDaoImpl.class);
+	private static final Log log = LogFactory.getLog(CandidatDaoImpl.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public SessionTest findById(int id) {
-		log.debug("getting SessionTest instance with id: " + id);
+	public Candidat findById(int id) {
+		log.debug("getting Candidat instance with id: " + id);
 		try {
-			final SessionTest instance = this.entityManager.find(
-					SessionTest.class, id);
+			final Candidat instance = this.entityManager.find(Candidat.class,
+					id);
 			log.debug("get successful");
 			return instance;
 		} catch (final RuntimeException re) {
@@ -33,11 +33,10 @@ public class SessionTestDaoImpl {
 		}
 	}
 
-	public SessionTest merge(SessionTest detachedInstance) {
-		log.debug("merging SessionTest instance");
+	public Candidat merge(Candidat detachedInstance) {
+		log.debug("merging Candidat instance");
 		try {
-			final SessionTest result = this.entityManager
-					.merge(detachedInstance);
+			final Candidat result = this.entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (final RuntimeException re) {
@@ -46,8 +45,8 @@ public class SessionTestDaoImpl {
 		}
 	}
 
-	public void persist(SessionTest transientInstance) {
-		log.debug("persisting SessionTest instance");
+	public void persist(Candidat transientInstance) {
+		log.debug("persisting Candidat instance");
 		try {
 			this.entityManager.persist(transientInstance);
 			log.debug("persist successful");
@@ -57,8 +56,8 @@ public class SessionTestDaoImpl {
 		}
 	}
 
-	public void remove(SessionTest persistentInstance) {
-		log.debug("removing SessionTest instance");
+	public void remove(Candidat persistentInstance) {
+		log.debug("removing Candidat instance");
 		try {
 			this.entityManager.remove(persistentInstance);
 			log.debug("remove successful");

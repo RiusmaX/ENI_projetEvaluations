@@ -1,4 +1,4 @@
-package fr.eni_ecole.projet.dao.impl;
+package fr.eni_ecole.projet.dao;
 
 // Generated 24 ao�t 2015 15:22:55 by Hibernate Tools 3.4.0.CR1
 
