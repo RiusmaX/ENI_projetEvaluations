@@ -227,6 +227,7 @@ public class Resultat implements java.io.Serializable {
 		builder.append(this.resultatSections);
 		builder.append("]");
 		return builder.toString();
+
 	}
 
 }

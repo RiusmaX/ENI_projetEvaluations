@@ -227,6 +227,7 @@ public class Test implements java.io.Serializable {
 		builder.append(this.sessionTests);
 		builder.append("]");
 		return builder.toString();
+
 	}
 
 }

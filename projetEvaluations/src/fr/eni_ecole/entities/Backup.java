@@ -87,6 +87,6 @@ public class Backup implements java.io.Serializable {
 		builder.append(Arrays.toString(this.serialisable));
 		builder.append("]");
 		return builder.toString();
-	}
 
+	}
 }

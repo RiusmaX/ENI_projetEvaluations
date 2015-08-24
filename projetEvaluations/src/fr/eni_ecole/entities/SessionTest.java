@@ -192,6 +192,7 @@ public class SessionTest implements java.io.Serializable {
 		builder.append(this.candidats);
 		builder.append("]");
 		return builder.toString();
+
 	}
 
 }

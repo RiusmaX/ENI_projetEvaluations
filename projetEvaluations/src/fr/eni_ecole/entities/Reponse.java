@@ -148,6 +148,6 @@ public class Reponse implements java.io.Serializable {
 		builder.append(this.isArchive);
 		builder.append("]");
 		return builder.toString();
-	}
 
+	}
 }
