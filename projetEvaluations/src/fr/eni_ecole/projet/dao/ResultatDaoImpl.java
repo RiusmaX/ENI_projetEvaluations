@@ -1,4 +1,4 @@
-package fr.eni_ecole.projet.dao.impl;
+package fr.eni_ecole.projet.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -6,24 +6,25 @@ import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import fr.eni_ecole.entities.Backup;
+import fr.eni_ecole.entities.Resultat;
 
 /**
  * 
  * @author d1409sergentm
  *
  */
-public class BackupDaoImpl {
+public class ResultatDaoImpl {
 
-	private static final Log log = LogFactory.getLog(BackupDaoImpl.class);
+	private static final Log log = LogFactory.getLog(ResultatDaoImpl.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public Backup findById(int id) {
-		log.debug("getting Backup instance with id: " + id);
+	public Resultat findById(int id) {
+		log.debug("getting Resultat instance with id: " + id);
 		try {
-			final Backup instance = this.entityManager.find(Backup.class, id);
+			final Resultat instance = this.entityManager.find(Resultat.class,
+					id);
 			log.debug("get successful");
 			return instance;
 		} catch (final RuntimeException re) {
@@ -32,10 +33,10 @@ public class BackupDaoImpl {
 		}
 	}
 
-	public Backup merge(Backup detachedInstance) {
-		log.debug("merging Backup instance");
+	public Resultat merge(Resultat detachedInstance) {
+		log.debug("merging Resultat instance");
 		try {
-			final Backup result = this.entityManager.merge(detachedInstance);
+			final Resultat result = this.entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (final RuntimeException re) {
@@ -44,8 +45,8 @@ public class BackupDaoImpl {
 		}
 	}
 
-	public void persist(Backup transientInstance) {
-		log.debug("persisting Backup instance");
+	public void persist(Resultat transientInstance) {
+		log.debug("persisting Resultat instance");
 		try {
 			this.entityManager.persist(transientInstance);
 			log.debug("persist successful");
@@ -55,8 +56,8 @@ public class BackupDaoImpl {
 		}
 	}
 
-	public void remove(Backup persistentInstance) {
-		log.debug("removing Backup instance");
+	public void remove(Resultat persistentInstance) {
+		log.debug("removing Resultat instance");
 		try {
 			this.entityManager.remove(persistentInstance);
 			log.debug("remove successful");

@@ -1,4 +1,4 @@
-package fr.eni_ecole.projet.dao.impl;
+package fr.eni_ecole.projet.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -6,24 +6,24 @@ import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import fr.eni_ecole.entities.Theme;
+import fr.eni_ecole.entities.Test;
 
 /**
  * 
  * @author d1409sergentm
  *
  */
-public class ThemeDaoImpl {
+public class TestDaoImpl {
 
-	private static final Log log = LogFactory.getLog(ThemeDaoImpl.class);
+	private static final Log log = LogFactory.getLog(TestDaoImpl.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public Theme findById(int id) {
-		log.debug("getting Theme instance with id: " + id);
+	public Test findById(int id) {
+		log.debug("getting Test instance with id: " + id);
 		try {
-			final Theme instance = this.entityManager.find(Theme.class, id);
+			final Test instance = this.entityManager.find(Test.class, id);
 			log.debug("get successful");
 			return instance;
 		} catch (final RuntimeException re) {
@@ -32,10 +32,10 @@ public class ThemeDaoImpl {
 		}
 	}
 
-	public Theme merge(Theme detachedInstance) {
-		log.debug("merging Theme instance");
+	public Test merge(Test detachedInstance) {
+		log.debug("merging Test instance");
 		try {
-			final Theme result = this.entityManager.merge(detachedInstance);
+			final Test result = this.entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (final RuntimeException re) {
@@ -44,8 +44,8 @@ public class ThemeDaoImpl {
 		}
 	}
 
-	public void persist(Theme transientInstance) {
-		log.debug("persisting Theme instance");
+	public void persist(Test transientInstance) {
+		log.debug("persisting Test instance");
 		try {
 			this.entityManager.persist(transientInstance);
 			log.debug("persist successful");
@@ -55,8 +55,8 @@ public class ThemeDaoImpl {
 		}
 	}
 
-	public void remove(Theme persistentInstance) {
-		log.debug("removing Theme instance");
+	public void remove(Test persistentInstance) {
+		log.debug("removing Test instance");
 		try {
 			this.entityManager.remove(persistentInstance);
 			log.debug("remove successful");

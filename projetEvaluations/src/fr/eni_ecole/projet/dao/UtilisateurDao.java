@@ -1,4 +1,4 @@
-package fr.eni_ecole.projet.dao.impl;
+package fr.eni_ecole.projet.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -6,25 +6,25 @@ import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import fr.eni_ecole.entities.Resultat;
+import fr.eni.entities.Utilisateur;
 
 /**
  * 
  * @author d1409sergentm
  *
  */
-public class ResultatDaoImpl {
+public class UtilisateurDao {
 
-	private static final Log log = LogFactory.getLog(ResultatDaoImpl.class);
+	private static final Log log = LogFactory.getLog(UtilisateurDao.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public Resultat findById(int id) {
-		log.debug("getting Resultat instance with id: " + id);
+	public Utilisateur findById(int id) {
+		log.debug("getting Utilisateur instance with id: " + id);
 		try {
-			final Resultat instance = this.entityManager.find(Resultat.class,
-					id);
+			final Utilisateur instance = this.entityManager.find(
+					Utilisateur.class, id);
 			log.debug("get successful");
 			return instance;
 		} catch (final RuntimeException re) {
@@ -33,10 +33,11 @@ public class ResultatDaoImpl {
 		}
 	}
 
-	public Resultat merge(Resultat detachedInstance) {
-		log.debug("merging Resultat instance");
+	public Utilisateur merge(Utilisateur detachedInstance) {
+		log.debug("merging Utilisateur instance");
 		try {
-			final Resultat result = this.entityManager.merge(detachedInstance);
+			final Utilisateur result = this.entityManager
+					.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (final RuntimeException re) {
@@ -45,8 +46,8 @@ public class ResultatDaoImpl {
 		}
 	}
 
-	public void persist(Resultat transientInstance) {
-		log.debug("persisting Resultat instance");
+	public void persist(Utilisateur transientInstance) {
+		log.debug("persisting Utilisateur instance");
 		try {
 			this.entityManager.persist(transientInstance);
 			log.debug("persist successful");
@@ -56,8 +57,8 @@ public class ResultatDaoImpl {
 		}
 	}
 
-	public void remove(Resultat persistentInstance) {
-		log.debug("removing Resultat instance");
+	public void remove(Utilisateur persistentInstance) {
+		log.debug("removing Utilisateur instance");
 		try {
 			this.entityManager.remove(persistentInstance);
 			log.debug("remove successful");
