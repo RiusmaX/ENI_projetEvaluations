@@ -13,6 +13,9 @@
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.0.0/globalize.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+<sj:head jqueryui="true"/>
+
 <title>Gestion des tests</title>
 </head>
 <body>
@@ -21,8 +24,7 @@
 	<s:form action="enregistrerTest">
       	<s:textfield label="Nom du test" name="nomTest" placeholder="Nom"/>
      	<s:select label="Nature du test" headerKey="-1" headerValue="--- Choix ---" list="#{'1':'ECF','2':'Test de logique ','3':'Tests de positionnement','4':'Test d’apprentissage '}" name="natureTest"/>
-     	</br>
-		<sj:head jqueryui="true"/>
+     	<br/>
 		<sj:spinner cssClass="cssSpinner" label="Temps maximal (en minutes)" name="tempsMax" id="tempsMax" min="0" max="240" step="1" value="180"/>
 		<sj:spinner cssClass="cssSpinner" label="Seuil 'En cours d\'acquisition' en %" name="seuilECA" id="seuilECA" min="55" max="70" step="1" value="55"/>
 		<sj:spinner cssClass="cssSpinner" label="Seuil 'Aquis' en %" name="seuilA" id="seuilA" min="70" max="100" step="1" value="70"/>
