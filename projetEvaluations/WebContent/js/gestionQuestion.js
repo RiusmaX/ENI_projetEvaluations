@@ -25,6 +25,3 @@ function supprimerPlusieursRep() {
 	   
 	}
 }
-$(".editor").jqte(
-	{button : "SEND"}
-);

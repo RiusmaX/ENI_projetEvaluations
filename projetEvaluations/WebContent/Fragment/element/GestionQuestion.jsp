@@ -94,6 +94,10 @@
   	</div>
   	</fieldset>
 </div> 
-
+<script>
+$(".editor").jqte(
+		{button : "SEND"}
+);
+</script>
 </body>
 </html>
