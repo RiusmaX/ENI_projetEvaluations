@@ -14,6 +14,7 @@
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript" src="../../js/jquery-te-1.4.0.min.js"></script>
+<script type="text/javascript" src="../../js/gestionQuestion.js"></script>
 
 <title>Gestion des questions</title>
 </head>
@@ -74,6 +75,7 @@
 				   	<s:checkbox name="bonneRep" fieldValue="true"/></br>
 				   	<div id="ajoutChampsPlusieursRep"></div>
 				    <input type='button' onclick='ajoutChampsPlusieursRep();' class="btn btn-warning" value='+'/>
+				    <input type='button' onclick='supprimerPlusieursRep();' class="btn btn-danger" value='-'/></br>
 				    <s:submit cssClass="btn btn-primary" action="enregistrerReponse" name="Valider" value="Ajouter"/>
 				</s:form>
 		      </div>
@@ -92,34 +94,6 @@
   	</div>
   	</fieldset>
 </div> 
-<script type="text/javascript">
-function ajoutChampsUneRep() {
-	var i;
-	for(i=0; i<10; i++) {
-		i = i + 1;
-	}
-	var a = document.getElementById("ajoutChampsUneRep");
-	a.innerHTML += '<div id="ajoutChampsUneRep"'+i+'><input type="text" name="reponseQuestion" placeholder="Réponse"/> <input type="radio" name="bonneRep" value="1"></br></div>';
-	
-}
-function supprimerChampsUneRep() {
-	var element = document.getElementById("ajoutChampsUneRep");
-	// boucle tant qu'un enfant existe
-	while (element.firstChild) {
-	   // le supprime
-	   	element.removeChild(element.firstChild);
-	   
-	}
-}
-function ajoutChampsPlusieursRep() {
-	var a = document.getElementById("ajoutChampsPlusieursRep");
-	a.innerHTML += '<input type="text" name="reponseQuestion" placeholder="Réponse"/> <input type="checkbox" name="bonneRep" value="1"></br>';
-}
-$(".editor").jqte(
-	{button : "SEND"}
-);
-</script>
-
 
 </body>
 </html>
