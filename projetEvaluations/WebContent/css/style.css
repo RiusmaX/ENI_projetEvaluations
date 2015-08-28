@@ -1,5 +1,26 @@
 @CHARSET "UTF-8";
 
+.label {
+	padding: 0.2em 0.6em 0.3em !important;
+	color: black !important;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	font-size: 14px !important;
+	vertical-align: baseline !important;
+	text-align: left !important;
+	
+}
+.textareaQuestion {
+	resize: none !important;
+	width: 20.0em !important; 
+	height: 7.0em !important;
+} 
+.txtQuestion{
+	display: inline-block !immportant;
+}
+.btnradioQuestion{
+	display: inline-block !immportant;
+}
+
 .btnConnection {
 	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
 	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -129,7 +150,7 @@ a.qMarquees { color: orange; }
 }
 
 .spinner {
-  width: 90px;
+  width: 100px;
 }
 .spinner input {
   text-align: right;
@@ -164,6 +185,11 @@ a.qMarquees { color: orange; }
   left: 4px;
 }
 
-#tempsMax {
-	height: 1px;
+.cssSpinner {
+	font-size : 0.1em;
+	height: 0.8em;
+	width: 7em;
+}
+.cssSelect {
+	width: 12em;
 }
