@@ -42,9 +42,27 @@
     	<!-- A automatiser pour chaque questions marquées-->
    		<font color="orange"><a href="#" class="qMarquees">2 - #énoncé </a></font><br>
    	</fieldset></br>
-   	  	
-  	<a href="validationTest.jsp" class=btnSyntheseTest>J'ai fini le test</a>
+   	
+   	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">J'ai fini le test</button>
   	
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  		<div class="modal-dialog" role="document">
+    		<div class="modal-content">
+      			<div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Valider le test</h4>
+			    </div>
+      			<div class="modal-body">
+			        <p>Etes-vous sur de valider le test ?</p>
+			    </div>
+      			<div class="modal-footer">
+        			<button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
+					<!-- si "oui" clore le test -->
+        			<a class="btn btn-primary" href="Resultat.jsp">Oui</a>
+      			</div>
+    		</div>
+  		</div>
+	</div>
   	
   	<script>
 	function compte_a_rebours(total_secondes)
@@ -52,11 +70,11 @@
 		var compte_a_rebours = document.getElementById("compte_a_rebours");
 		var prefixe = "Fin de l'épreuve dans ";
 		
-		if (total_secondes < 0)
+		/*if (total_secondes < 0)
 		{
 			prefixe = "Epreuve terminé"; // il y a "; // On modifie le préfixe si la différence est négatif
 			total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
-		}
+		}*/
 		if (total_secondes > 0)
 		{
 			var jours = Math.floor(total_secondes / (60 * 60 * 24));
