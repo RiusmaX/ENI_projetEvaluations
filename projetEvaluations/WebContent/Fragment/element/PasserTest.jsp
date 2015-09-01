@@ -75,11 +75,11 @@
 		var compte_a_rebours = document.getElementById("compte_a_rebours");
 		var prefixe = "Fin de l'épreuve dans ";
 		
-		if (total_secondes < 0)
+		/*if (total_secondes < 0)
 		{
 			prefixe = "Epreuve terminé"; // il y a "; // On modifie le préfixe si la différence est négatif
 			total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
-		}
+		}*/
 		if (total_secondes > 0)
 		{
 			var jours = Math.floor(total_secondes / (60 * 60 * 24));
