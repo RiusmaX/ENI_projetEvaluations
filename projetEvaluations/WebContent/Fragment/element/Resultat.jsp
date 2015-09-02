@@ -50,9 +50,9 @@
 	<div id="detail" class="col-md-7">
 		<p><u>Détails des résultats</u></p>
 		<div class="col-md-4">
-			Résultat global : Acquis </br>
-			Note globale : 42/50 </br>
-			84% de bonnes réponses </br>
+			Résultat global : <strong>Acquis </strong></br></br>
+			Note globale : <strong>42/50 </strong></br>
+			<strong>84% </strong>de bonnes réponses </br>
 		</div>
 		<div class="col-md-3">
 			Temps passé : 2h07 </br>
@@ -62,7 +62,7 @@
 		</div>
 	</div>
 	<div id="retourAccueil" class="col-md-12">
-		<button href="#Accueil" class="btn btn-primary" name="retourAccueil" id="btn-retour-resultat">Retour à l'accueil</button>
+		<a href="Accueil.jsp" class="btn btn-primary" name="retourAccueil" id="btn-retour-resultat">Retour à l'accueil</a>
 	</div>
 	
 	<script>
